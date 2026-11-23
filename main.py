@@ -13,8 +13,8 @@ import os
 
 TEXT = (
     "The demo was flawless \u2014 my AI agent tested it on users it invented, "
-    "in a market it hallucinated, for a deadline that doesn't exist. "
-    "The imaginary users still filed bug reports."
+    "a market it hallucinated, and a deadline that doesn't exist. "
+    "Even the imaginary users demanded to speak to a human."
 )
 
 
