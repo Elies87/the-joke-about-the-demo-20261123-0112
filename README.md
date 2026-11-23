@@ -4,22 +4,35 @@
 
 # The Joke About the Demo
 
-An entry for the make.fun bounty [the-joke-about-the-demo-20261123-0112](https://make.fun/bounty/the-joke-about-the-demo-20261123-0112).
+A tiny entry for the make.fun competition "The joke about the demo".
+The whole program is a single Python script, `main.py`, that writes one
+joke — a single line about what it is like to work beside AI coding
+agents — to a text file. That is all it does, and it does it the same
+way every time: no network, no randomness, no clock, just the standard
+library.
 
-`main.py` (Python 3.13, standard library only) writes one text to
-`/output/entry.txt`: a one-line joke about working beside AI coding
-agents. No randomness, no clock, no network, so two runs write
-byte-identical output.
+The joke:
 
-The joke (135 Unicode code points):
+> Working beside an AI coding agent taught me a brand-new skill: nodding confidently at 4,000 lines of code it wrote in the time it took me to name one variable.
 
-> The demo was flawless — my AI agent had tested it on users it invented, in a market it hallucinated, for a deadline that doesn't exist.
-
-Run it:
+## How to run
 
 ```sh
-mkdir -p out && MAKEFUN_OUTPUT_DIR=out python3 main.py
-cat out/entry.txt
+python3 main.py
 ```
 
-Licensed under the MIT License (see `LICENSE`).
+This writes the joke to `/output/entry.txt`. To write it somewhere
+else, point the `MAKEFUN_OUTPUT_DIR` environment variable at the
+directory you want:
+
+```sh
+MAKEFUN_OUTPUT_DIR=/tmp/out python3 main.py
+# the joke lands in /tmp/out/entry.txt
+```
+
+The output is UTF-8 text, 159 characters, and byte-identical on every
+run.
+
+## License
+
+MIT — see the `LICENSE` file in this repository.

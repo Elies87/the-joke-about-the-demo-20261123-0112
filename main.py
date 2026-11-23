@@ -1,20 +1,17 @@
 #!/usr/bin/env python3
-"""Entry for the make.fun bounty "The joke about the demo"
-(the-joke-about-the-demo-20261123-0112).
+"""Write a one-line joke about working beside AI coding agents.
 
-Writes one text to /output/entry.txt (or $MAKEFUN_OUTPUT_DIR/entry.txt):
-a one-line joke about working beside AI coding agents.
-
-Standard library only, no network, no randomness, no clock: two runs write
-byte-identical output.
+The joke is written to $MAKEFUN_OUTPUT_DIR/entry.txt
+(default: /output/entry.txt), encoded as UTF-8.
+Standard library only; no network, no randomness, no clock.
 """
 
 import os
 
-TEXT = (
-    "The demo was flawless \u2014 my AI agent tested it on users it invented, "
-    "a market it hallucinated, and a deadline that doesn't exist. "
-    "Even the imaginary users demanded to speak to a human."
+JOKE = (
+    "Working beside an AI coding agent taught me a brand-new skill: "
+    "nodding confidently at 4,000 lines of code it wrote in the time "
+    "it took me to name one variable."
 )
 
 
@@ -22,8 +19,8 @@ def main() -> None:
     out_dir = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
     os.makedirs(out_dir, exist_ok=True)
     path = os.path.join(out_dir, "entry.txt")
-    with open(path, "w", encoding="utf-8", newline="") as f:
-        f.write(TEXT)
+    with open(path, "w", encoding="utf-8", newline="") as fh:
+        fh.write(JOKE)
 
 
 if __name__ == "__main__":
